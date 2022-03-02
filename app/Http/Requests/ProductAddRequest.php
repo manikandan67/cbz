@@ -25,12 +25,12 @@ class ProductAddRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'code'=>'required:unique:products',
-            'quantity'=>'required:numeric:max:1000',
-            'price'=>'required:numeric:digits:15',
-            'description'=>'required:max:255',
+            'code'=>'required|unique:products',
+            'quantity'=>'required|numeric|max:1000',
+            'price'=>'required|numeric|digits:15',
+            'description'=>'required|max:255',
             'status'=>'required',
-            'image'=>'required:mimes:jpg,png'
+            'image'=>'required|mimes:jpg,png'
         ];
     }
 }
